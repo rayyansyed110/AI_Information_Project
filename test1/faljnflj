@@ -1,0 +1,11 @@
+import requests
+
+url = "http://localhost:11434/v1/chat"
+headers = {"Content-Type": "application/json"}
+payload = {
+    "model": "phi3:3.8b",  # Replace with the correct model name
+    "messages": [{"role": "user", "content": "Tell me about the blue-ringed octopus."}]
+}
+
+response = requests.post(url, json=payload, headers=headers)
+print(response.json())
